@@ -12,7 +12,7 @@ export enum OpenAIModelID {
 }
 
 // in case the `DEFAULT_MODEL` environment variable is not set or set to an unsupported model
-export const fallbackModelID = OpenAIModelID.CUSTOM_1;
+export const fallbackModelID = OpenAIModelID.CUSTOM_2;
 
 export const OpenAIModels: Record<OpenAIModelID, OpenAIModel> = {
   [OpenAIModelID.CUSTOM_1]: {
