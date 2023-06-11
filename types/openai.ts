@@ -7,28 +7,14 @@ export interface OpenAIModel {
   tokenLimit: number;
 }
 export enum OpenAIModelID {
-  GPT_3_5 = 'gpt-3.5-turbo',
-  GPT_4 = 'gpt-4',
   CUSTOM_1 = 'simple-conversation-chat',
-  CUSTOM_2 = 'summary-conversation-chat'
+  CUSTOM_2 = 'retrieval-conversation-chat'
 }
 
 // in case the `DEFAULT_MODEL` environment variable is not set or set to an unsupported model
-export const fallbackModelID = OpenAIModelID.GPT_3_5;
+export const fallbackModelID = OpenAIModelID.CUSTOM_1;
 
 export const OpenAIModels: Record<OpenAIModelID, OpenAIModel> = {
-  [OpenAIModelID.GPT_3_5]: {
-    id: OpenAIModelID.GPT_3_5,
-    name: 'GPT-3.5',
-    maxLength: 12000,
-    tokenLimit: 4000,
-  },
-  [OpenAIModelID.GPT_4]: {
-    id: OpenAIModelID.GPT_4,
-    name: 'GPT-4',
-    maxLength: 24000,
-    tokenLimit: 8000,
-  },
   [OpenAIModelID.CUSTOM_1]: {
     id: OpenAIModelID.CUSTOM_1,
     name: 'SIMPLE',
@@ -37,7 +23,7 @@ export const OpenAIModels: Record<OpenAIModelID, OpenAIModel> = {
   },
   [OpenAIModelID.CUSTOM_2]: {
     id: OpenAIModelID.CUSTOM_2,
-    name: 'SUMMARY',
+    name: 'RETRIEVAL',
     maxLength: 12000,
     tokenLimit: 3000,
   },
